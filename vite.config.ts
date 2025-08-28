@@ -3,18 +3,15 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/',  // Root path for Hostinger
+  base: '/',
   server: {
     host: "::",
     port: 8080,
-    // Remove the global headers - let Vite handle MIME types automatically
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -25,9 +22,11 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    target: 'es2015', // Ensure compatibility
     rollupOptions: {
       output: {
         format: 'es',
+        // Ensure .js extension for all JS files
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name;
           if (!name) return 'assets/[name]-[hash][extname]';
