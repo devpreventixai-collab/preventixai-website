@@ -9,9 +9,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    headers: {
-      'Content-Type': 'application/javascript',
-    },
+    // Remove the global headers - let Vite handle MIME types automatically
   },
   plugins: [
     react(),
