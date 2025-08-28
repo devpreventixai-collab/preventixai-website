@@ -1,0 +1,28 @@
+RewriteEngine On
+
+# IONOS-specific MIME type configuration
+<IfModule mod_mime.c>
+    # Ensure JavaScript files are served with correct MIME type
+    AddType text/javascript .js
+    AddType text/javascript .mjs
+    AddType application/javascript .js
+    AddType application/javascript .mjs
+    
+    # Other important MIME types
+    AddType text/css .css
+    AddType text/html .html
+</IfModule>
+
+# Set explicit headers for JavaScript modules
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|mjs)$">
+        Header always set Content-Type "text/javascript; charset=utf-8"
+        Header always set X-Content-Type-Options "nosniff"
+    </FilesMatch>
+</IfModule>
+
+# Client-side routing for React
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
