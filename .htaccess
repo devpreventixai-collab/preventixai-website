@@ -1,0 +1,32 @@
+# Fix MIME types for JavaScript modules
+<IfModule mod_mime.c>
+    AddType text/javascript .js
+    AddType text/javascript .mjs
+    AddType text/javascript .jsx
+    AddType text/javascript .ts
+    AddType text/javascript .tsx
+</IfModule>
+
+# Enable compression for JavaScript files
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(js|jsx|ts|tsx|mjs)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>
+
+# Set cache headers for static assets
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Fallback for Single Page Applications
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
