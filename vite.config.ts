@@ -5,14 +5,18 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/', // Keep this as '/' for custom domain
+  base: '/',  // Root path for Hostinger
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    mode === 'development' &&
+    componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -25,11 +29,11 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        // Use 'iife' format instead of 'es' to avoid module script issues
-        format: 'iife',
+        format: 'es',
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name;
           if (!name) return 'assets/[name]-[hash][extname]';
+          
           if (name.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
             return 'assets/images/[name]-[hash][extname]';
           }
