@@ -5,11 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/', // Correct for custom domain
+  base: '/', // Keep this as '/' for custom domain
   server: {
     host: "::",
     port: 8080,
-    // Remove headers from server config, as GitHub Pages ignores this
   },
   plugins: [
     react(),
@@ -26,7 +25,8 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        format: 'es',
+        // Use 'iife' format instead of 'es' to avoid module script issues
+        format: 'iife',
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name;
           if (!name) return 'assets/[name]-[hash][extname]';
