@@ -14,7 +14,7 @@ const Pricing = () => {
       features: [
         "Core compliance",
         "Incident Logging & Monitoring", 
-        "Basic Analytics",
+        "Basic Analysis",
         "Standard reporting",
         "Email support"
       ],
@@ -31,7 +31,7 @@ const Pricing = () => {
       features: [
         "Everything in Basic",
         "Predictive AI incident analysis",
-        "Advanced analytics/Root Cause Analysis",
+        "Advanced Analysis/Root Cause Analysis",
         "Onboarding Assistance",
         "Priority email support",
         "Custom integrations"

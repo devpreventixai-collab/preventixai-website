@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BarChart3, Brain, Zap, TrendingUp, Users, AlertTriangle } from "lucide-react";
 
-const Analytics = () => {
+const Analysis = () => {
   const stats = [
     { label: "Workplace Accidents", value: "600K", icon: AlertTriangle, sublabel: "Reported in 23/24" },
     { label: "People Affected", value: "1.7M", icon: Users, sublabel: "Work-related ill-health" },
@@ -18,7 +18,7 @@ const Analytics = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Advanced AI Analytics &
+                Advanced AI Analysis &
                 <span className="text-primary"> Insights</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -61,7 +61,7 @@ const Analytics = () => {
             </div>
 
             <Button variant="hero" size="lg">
-              Explore Analytics Features
+              Explore Analysis Features
             </Button>
           </div>
 
@@ -119,4 +119,4 @@ const Analytics = () => {
   );
 };
 
-export default Analytics;
+export default Analysis;

@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white/95 backdrop-blur-sm border border-white/60 flex items-center justify-center">
             <img 
               src="https://preventixai-dev-media-bucket.s3.eu-west-2.amazonaws.com/Screenshot+2025-08-28+at+01.58.26.png" 
-              alt="Safety analytics chart"
+              alt="Safety Analysis chart"
               className="w-full h-full object-cover"
             />
           </div>
@@ -88,7 +88,7 @@ const Hero = () => {
             <div className="flex items-center space-x-8 mb-8 text-sm text-slate-600">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                <span>AI-Powered Analytics</span>
+                <span>AI-Powered Analysis</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-blue-400 rounded-full"></div>

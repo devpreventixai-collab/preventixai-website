@@ -23,7 +23,7 @@ const Footer = () => {
             <h3 className="font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-2 text-secondary-foreground/80">
               <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Analytics</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Analysis</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
               <li><a href="#" className="hover:text-white transition-colors">API</a></li>
             </ul>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/60">
-          <p>&copy; 2024 Preventix AI. All rights reserved.</p>
+          <p>&copy; 2025 Preventix AI. All rights reserved.</p>
         </div>
       </div>
     </footer>
