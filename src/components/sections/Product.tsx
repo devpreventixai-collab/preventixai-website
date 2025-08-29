@@ -9,7 +9,7 @@ const Product = () => {
   const productData = {
     title: "OUR REVOLUTIONARY PRODUCT",
     subtitle: "PreventixAI - PREDICT | PREVENT | PROTECT.",
-    description: "Transform workplace safety with our AI-powered platform that predicts risks, prevents accidents, and protects your workforce. Our web-SaaS solution combines predictive analytics with generative AI to create safer workplaces and reduce the £21 billion cost of workplace accidents in the UK.",
+    description: "Transform workplace safety with our AI-powered platform that predicts risks, prevents accidents, and protects your workforce. Our web-SaaS solution combines predictive Analysis with generative AI to create safer workplaces and reduce the £21 billion cost of workplace accidents in the UK.",
     
     // Media content
     media: {
@@ -44,7 +44,7 @@ const Product = () => {
       },
       features: {
         title: "AI Features",
-        content: "Advanced predictive analytics identify accident patterns before they happen. Generative AI provides personalized safety recommendations, automated HSE-compliant reports, and root cause analysis. Our platform learns from your data to continuously improve safety outcomes."
+        content: "Advanced predictive Analysis identify accident patterns before they happen. Generative AI provides personalized safety recommendations, automated HSE-compliant reports, and root cause analysis. Our platform learns from your data to continuously improve safety outcomes."
       },
       targeting: {
         title: "Target Markets",
@@ -66,7 +66,7 @@ const Product = () => {
       features: [
         "Core Compliance Tools",
         "Incident Logging & Monitoring", 
-        "Basic Analytics Dashboard",
+        "Basic Analysis Dashboard",
         "HSE Report Generation"
       ]
     },
@@ -78,7 +78,7 @@ const Product = () => {
       features: [
         "Everything in Basic",
         "Predictive AI Analysis",
-        "Advanced Analytics",
+        "Advanced Analysis",
         "Root Cause Analysis",
         "Onboarding Assistance"
       ],
@@ -217,7 +217,7 @@ const Product = () => {
               <div className="flex items-start space-x-3">
                 <BarChart3 className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-gray-900">Advanced Analytics</h4>
+                  <h4 className="font-semibold text-gray-900">Advanced Analysis</h4>
                   <p className="text-sm text-gray-600">Deep insights and root cause analysis</p>
                 </div>
               </div>
