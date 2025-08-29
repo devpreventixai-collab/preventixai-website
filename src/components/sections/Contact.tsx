@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Header />
-      <main>
+      <main className="pt-16"> 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

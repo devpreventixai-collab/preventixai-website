@@ -44,7 +44,7 @@ const FAQ: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Header />
-      <main>
+      <main className="pt-24"> {/* Added top padding to prevent header overlap */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
