@@ -88,7 +88,7 @@ const Hero = () => {
             <div className="flex items-center space-x-8 mb-8 text-sm text-slate-600">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                <span>AI-Powered Analytics</span>
+                <span>AI-Powered Analysis</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
