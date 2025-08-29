@@ -8,6 +8,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import blogHeroImage from "@/assets/blog-hero.jpg";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { motion } from 'framer-motion';
+
 
 interface BlogPost {
     id: number;
@@ -255,26 +257,36 @@ export default function Blog() {
     console.log('Carousel slide changed'); // Placeholder for debugging
   };
 
+  
   return (
     <div className="min-h-screen">
       <Header />
       <main>
         <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
           {/* Main Blog Slider */}
-          <section className="mt-16 py-12 px-4 bg-[#17332d] mx-auto">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mt-16 py-12 px-4 bg-[#17332d] mx-auto"
+          >
             <Carousel className="mb-4">
               {blogPosts.map((post) => (
-                <div key={post.id} className="flex-[0_0_100%] px-4">
-                  <div className="relative bg-blue-100 rounded-2xl overflow-hidden min-h-[500px] flex items-center">
+                <motion.div 
+                  key={post.id} 
+                  className="flex-[0_0_100%] px-4"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <div className="relative bg-blue-100 rounded-2xl overflow-hidden min-h-[500px] flex items-center transition-all duration-300 hover:shadow-2xl">
                     <div className="flex w-full max-w-6xl mx-auto">
                       {/* Content Side */}
                       <div className="flex-1 p-8 flex flex-col justify-center">
-                        <Badge variant="secondary" className="w-fit mb-4 bg-primary/10 text-primary">
+                        <Badge variant="secondary" className="w-fit mb-4 bg-primary/10 text-primary transition-colors duration-300 hover:bg-primary/20">
                           {post.category}
                         </Badge>
-                        <h2 className="text-4xl font-bold mb-6 leading-tight">
-                          {post.title}
-                        </h2>
+                        <h2 className="text-4xl font-bold mb-6 leading-tight">{post.title}</h2>
                         <ExpandableContent 
                           excerpt={post.excerpt} 
                           fullContent={post.fullContent}
@@ -290,50 +302,72 @@ export default function Blog() {
                           </div>
                           <span className="text-sm text-primary font-medium">{post.readTime}</span>
                         </div>
+                        <motion.button
+                          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                          whileTap={{ scale: 0.95 }}
+                          className="w-fit px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
+                        >
+                          Read More
+                        </motion.button>
                       </div>
-
+  
                       {/* Image Side */}
                       <div className="flex-1 p-8">
-                        <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden">
+                        <motion.div 
+                          className="relative h-full min-h-[400px] rounded-xl overflow-hidden"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.3 }}
+                        >
                           <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                           />
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </Carousel>
-          </section>
-
+          </motion.section>
+  
           {/* PREDICT Section */}
-          <section className="py-3 mt-4 px-4 max-w-[90rem] mx-auto">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="py-3 mt-4 px-4 max-w-[90rem] mx-auto"
+          >
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl font-bold px-3">PREDICT</h2>
             </div>
-
+  
             <Carousel>
               {newsroomPosts.map((post) => (
-                <div key={post.id} className="flex-[0_0_33.333%] px-3 mb-3">
-                  <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
+                <motion.div 
+                  key={post.id} 
+                  className="flex-[0_0_33.333%] px-3 mb-3"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium">
+                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
                           {post.category}
                         </Badge>
                       </div>
                     </div>
-
+  
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h3>
                       <ExpandableContent 
@@ -349,38 +383,56 @@ export default function Blog() {
                         </div>
                         <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
+                      <motion.button
+                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
+                      >
+                        Read Article
+                      </motion.button>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               ))}
             </Carousel>
-          </section>
-
+          </motion.section>
+  
           {/* PREVENT Section */}
-          <section className="py-3 px-4 max-w-[90rem] mx-auto">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            className="py-3 px-4 max-w-[90rem] mx-auto"
+          >
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl font-bold px-3">PREVENT</h2>
             </div>
-
+  
             <Carousel>
               {newsroomPosts.map((post) => (
-                <div key={post.id} className="flex-[0_0_33.333%] px-3 mb-3">
-                  <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
+                <motion.div 
+                  key={post.id} 
+                  className="flex-[0_0_33.333%] px-3 mb-3"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium">
+                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
                           {post.category}
                         </Badge>
                       </div>
                     </div>
-
+  
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h3>
                       <ExpandableContent 
@@ -396,38 +448,56 @@ export default function Blog() {
                         </div>
                         <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
+                      <motion.button
+                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
+                      >
+                        Read Article
+                      </motion.button>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               ))}
             </Carousel>
-          </section>
-
+          </motion.section>
+  
           {/* PROTECT Section */}
-          <section className="py-3 px-4 max-w-[90rem] mx-auto">
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            className="py-3 px-4 max-w-[90rem] mx-auto"
+          >
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl font-bold px-3">PROTECT</h2>
             </div>
-
+  
             <Carousel>
               {newsroomPosts.map((post) => (
-                <div key={post.id} className="flex-[0_0_33.333%] px-3 mb-3">
-                  <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
+                <motion.div 
+                  key={post.id} 
+                  className="flex-[0_0_33.333%] px-3 mb-3"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium">
+                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
                           {post.category}
                         </Badge>
                       </div>
                     </div>
-
+  
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h3>
                       <ExpandableContent 
@@ -443,43 +513,59 @@ export default function Blog() {
                         </div>
                         <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
+                      <motion.button
+                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
+                      >
+                        Read Article
+                      </motion.button>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               ))}
             </Carousel>
-          </section>
-
+          </motion.section>
+  
           {/* Editor's Picks - Static Grid */}
-          <section className="py-12 px-28 bg-[#f4f2f2] mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Editor's picks</h2>
-
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+            className="py-12 px-28 bg-[#f4f2f2] mx-auto"
+          >
+            <h2 className="text-3xl font-bold mb-8">Editor's Picks</h2>
+  
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Featured Article */}
-              <div className="lg:row-span-2">
-                <Card className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-primary/10 to-primary-glow/5">
+              <motion.div 
+                className="lg:row-span-2"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-primary/10 to-primary-glow/5">
                   <div className="relative overflow-hidden rounded-t-lg">
                     <img
                       src={editorsPicks[0].image}
                       alt={editorsPicks[0].title}
-                      className="w-full h-64 lg:h-80 object-cover"
+                      className="w-full h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-primary text-primary-foreground">
+                      <Badge className="bg-primary text-primary-foreground transition-colors duration-300 group-hover:bg-primary/80">
                         {editorsPicks[0].category}
                       </Badge>
                     </div>
                   </div>
-
+  
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-4 leading-tight">
+                    <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">
                       {editorsPicks[0].title}
                     </h3>
                     <ExpandableContent 
                       excerpt={editorsPicks[0].excerpt} 
                       fullContent={editorsPicks[0].fullContent}
                     />
-
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                       <div className="flex items-center gap-1">
                         <User className="h-4 w-4" />
@@ -491,50 +577,59 @@ export default function Blog() {
                       </div>
                       <span className="font-medium text-primary">{editorsPicks[0].readTime}</span>
                     </div>
+                  
                   </CardContent>
                 </Card>
-              </div>
-
+              </motion.div>
+  
               {/* Side Articles */}
               <div className="space-y-6">
                 {editorsPicks.slice(1).map((post) => (
-                  <Card key={post.id} className="hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-                    <CardContent className="p-6">
-                      <div className="flex gap-4">
-                        <div className="flex-shrink-0">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-20 h-20 object-cover rounded-lg"
-                          />
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <Badge variant="outline" className="mb-2 text-xs">
-                            {post.category}
-                          </Badge>
-                          <h4 className="font-bold text-sm mb-2 line-clamp-2 hover:text-primary transition-colors cursor-pointer">
-                            {post.title}
-                          </h4>
-                          <div className="text-xs text-muted-foreground mb-2">
-                            <ExpandableContent 
-                              excerpt={post.excerpt.slice(0, 80) + "..."} 
-                              fullContent={post.fullContent}
+                  <motion.div
+                    key={post.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
+                    <Card className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+                      <CardContent className="p-6">
+                        <div className="flex gap-4">
+                          <div className="flex-shrink-0">
+                            <img
+                              src={post.image}
+                              alt={post.title}
+                              className="w-20 h-20 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                             />
                           </div>
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <span>{post.author}</span>
-                            <span>•</span>
-                            <span>{post.readTime}</span>
+  
+                          <div className="flex-1 min-w-0">
+                            <Badge variant="outline" className="mb-2 text-xs transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                              {post.category}
+                            </Badge>
+                            <h4 className="font-bold text-sm mb-2 line-clamp-2 group-hover:text-primary transition-colors cursor-pointer">
+                              {post.title}
+                            </h4>
+                            <div className="text-xs text-muted-foreground mb-2">
+                              <ExpandableContent 
+                                excerpt={post.excerpt.slice(0, 80) + "..."} 
+                                fullContent={post.fullContent}
+                              />
+                            </div>
+                            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                              <span>{post.author}</span>
+                              <span>•</span>
+                              <span>{post.readTime}</span>
+                            </div>
+                        
                           </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
         </div>
       </main>
       <Footer />
