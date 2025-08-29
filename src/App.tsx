@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Blog from "./components/sections/Blog";
+import FAQ from "./components/sections/FAQ";
+import { ContactProvider } from './context/ContactContext';
+import Contact from "./components/sections/Contact";
 
 const queryClient = new QueryClient();
 
@@ -14,15 +17,19 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ContactProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
 
            <Route path="/blog" element={<Blog />} />
+           <Route path="/faq" element={<FAQ />} />
+           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </ContactProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

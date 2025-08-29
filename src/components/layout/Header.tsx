@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, Book, Briefcase, HelpCircle, Play, Newspaper, X } from "lucide-react";
 import { useState, useEffect } from "react";
-
 import {
   Popover,
   PopoverContent,
@@ -13,9 +12,9 @@ const Header = () => {
   const [openResources, setOpenResources] = useState(false);
   const [openSupport, setOpenSupport] = useState(false);
   const [openFeatures, setOpenFeatures] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showContactModal, setShowContactModal] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,6 +30,7 @@ const Header = () => {
     setOpenResources(false);
     setOpenSupport(false);
     setOpenFeatures(false);
+    setOpenFAQ(false);
   };
 
   // Smooth scroll function
@@ -208,79 +208,102 @@ const Header = () => {
                 <div className="w-64">
                   <h4 className="font-bold text-lg mb-4 text-gray-900">Get Help</h4>
                   <ul className="space-y-3">
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-                        onClick={() => setShowContactModal(true)}>
+                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
                       <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                      <a href="/contact" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
                         Contact Us
-                      </span>
+                      </a>
                     </li>
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-                        onClick={() => setShowContactModal(true)}>
+                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
                       <Play className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                      <a href="/contact" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
                         Request Demo
-                      </span>
+                      </a>
                     </li>
                   </ul>
                 </div>
               }
             />
-<PopoverItem
-  isOpen={openFeatures}
-  onOpenChange={setOpenFeatures}
-  onMouseEnter={() => {
-    closeAllPopovers();
-    setOpenFeatures(true);
-  }}
-  onMouseLeave={() => setOpenFeatures(false)}
-  trigger="Features"
-  content={
-    <div className="w-80 flex justify-center">
-      <div>
-        <h4 className="font-bold text-lg mb-4 text-gray-900">Key Features</h4>
-        <ul className="space-y-4">
-          <li 
-            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-            onClick={() => smoothScrollTo('features-section')}
-          >
-            <Book className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
-            <div>
-              <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
-                Record Incidents
-              </span>
-              <span className="text-xs text-gray-500">Easily document and track incidents</span>
-            </div>
-          </li>
-          <li 
-            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-            onClick={() => smoothScrollTo('features-section')}
-          >
-            <Shield className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
-            <div>
-              <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
-                AI-Powered Insights
-              </span>
-              <span className="text-xs text-gray-500">Get intelligent analysis from our Super AI Model</span>
-            </div>
-          </li>
-          <li 
-            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
-            onClick={() => smoothScrollTo('features-section')}
-          >
-            <Newspaper className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
-            <div>
-              <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
-                Advanced Filtering
-              </span>
-              <span className="text-xs text-gray-500">Filter and organize incidents efficiently</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  }
-/>
+
+            <PopoverItem
+              isOpen={openFeatures}
+              onOpenChange={setOpenFeatures}
+              onMouseEnter={() => {
+                closeAllPopovers();
+                setOpenFeatures(true);
+              }}
+              onMouseLeave={() => setOpenFeatures(false)}
+              trigger="Features"
+              content={
+                <div className="w-80 flex justify-center">
+                  <div>
+                    <h4 className="font-bold text-lg mb-4 text-gray-900">Key Features</h4>
+                    <ul className="space-y-4">
+                      <li 
+                        className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                        onClick={() => smoothScrollTo('features-section')}
+                      >
+                        <Book className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
+                        <div>
+                          <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
+                            Record Incidents
+                          </span>
+                          <span className="text-xs text-gray-500">Easily document and track incidents</span>
+                        </div>
+                      </li>
+                      <li 
+                        className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                        onClick={() => smoothScrollTo('features-section')}
+                      >
+                        <Shield className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
+                        <div>
+                          <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
+                            AI-Powered Insights
+                          </span>
+                          <span className="text-xs text-gray-500">Get intelligent analysis from our Super AI Model</span>
+                        </div>
+                      </li>
+                      <li 
+                        className="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group"
+                        onClick={() => smoothScrollTo('features-section')}
+                      >
+                        <Newspaper className="w-5 h-5 text-blue-600 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
+                        <div>
+                          <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200 block">
+                            Advanced Filtering
+                          </span>
+                          <span className="text-xs text-gray-500">Filter and organize incidents efficiently</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              }
+            />
+
+            <PopoverItem
+              isOpen={openFAQ}
+              onOpenChange={setOpenFAQ}
+              onMouseEnter={() => {
+                closeAllPopovers();
+                setOpenFAQ(true);
+              }}
+              onMouseLeave={() => setOpenFAQ(false)}
+              trigger="FAQ"
+              content={
+                <div className="w-64">
+                  <h4 className="font-bold text-lg mb-4 text-gray-900">Frequently Asked Questions</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
+                      <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
+                      <a href="/faq" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                        View FAQs
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              }
+            />
           </nav>
 
           {/* CTA Buttons */}
@@ -347,18 +370,24 @@ const Header = () => {
             >
               Why Choose Us?
             </button>
-            <button 
-              onClick={() => setShowContactModal(true)}
+            <a 
+              href="/contact"
               className="block w-full text-left py-3 px-4 rounded-xl font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
             >
               Support
-            </button>
+            </a>
             <button 
               onClick={() => smoothScrollTo('features-section')}
               className="block w-full text-left py-3 px-4 rounded-xl font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
             >
               Features
             </button>
+            <a 
+              href="/faq"
+              className="block w-full text-left py-3 px-4 rounded-xl font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+            >
+              FAQ
+            </a>
             <div className="pt-4 border-t border-gray-200">
               <a
                 href="https://preventixai-dev.web.app/incident-records"
@@ -374,74 +403,6 @@ const Header = () => {
           </nav>
         </div>
       </div>
-
-      {/* Contact Modal */}
-      {showContactModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md animate-in zoom-in-95 duration-200">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Contact Sales</h2>
-              <button 
-                onClick={() => setShowContactModal(false)}
-                className="p-2 hover:bg-gray-100 rounded-xl transition-colors duration-200"
-              >
-                <X className="w-6 h-6 text-gray-500" />
-              </button>
-            </div>
-            
-            <div className="space-y-6">
-              <div>
-                <div className="block text-sm font-medium text-gray-700 mb-2">
-                  Work Email <span className="text-red-500">*</span>
-                </div>
-                <input 
-                  type="email" 
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your work email"
-                />
-              </div>
-              
-              <div>
-                <div className="block text-sm font-medium text-gray-700 mb-2">
-                  First Name <span className="text-red-500">*</span>
-                </div>
-                <input 
-                  type="text" 
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your first name"
-                />
-              </div>
-              
-              <div>
-                <div className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone <span className="text-red-500">*</span>
-                </div>
-                <input 
-                  type="tel" 
-                  required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-              
-              <div className="text-xs text-gray-500 leading-relaxed">
-                By submitting my information, I confirm that I have read and understood 
-                the ClickUp <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>. I consent to the use of my information to 
-                contact me via email, phone, or SMS regarding my inquiry, with the option 
-                to opt out at any time.
-              </div>
-              
-              <button 
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 rounded-xl hover:from-purple-500 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };
