@@ -53,8 +53,8 @@ const Hero = () => {
                   </div>
                 </div>
 
-                {/* Features preview */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-6 lg:space-x-8 mb-6 lg:mb-8 text-sm text-slate-600">
+                {/* Features preview - centered and with overflow handling */}
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 lg:space-x-8 mb-6 lg:mb-8 text-sm text-slate-600">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                     <span>AI-Powered Analysis</span>
