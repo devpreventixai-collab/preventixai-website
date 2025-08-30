@@ -67,56 +67,54 @@ const blogPosts: BlogPost[] = [
     }
 ];
 
-const newsroomPosts: BlogPost[] = [
-    {
-        id: 4,
-        title: "Let the robots chase receipts",
-        excerpt: "Ramp reached a new valuation: possimus. hey this is the dummy txt tested by umang",
-        fullContent: "Ramp reached a new valuation: possimus. hey this is the dummy txt tested by umang. The era of manual receipt chasing is coming to an end as intelligent automation takes over this tedious but essential business function. Our latest AI-powered receipt processing system can automatically capture, categorize, and reconcile receipts from multiple sources including email, mobile uploads, and direct merchant integrations. This technology doesn't just scan receipts - it understands them, extracting relevant data points like vendor information, expense categories, project codes, and tax implications with remarkable accuracy. The system learns from organizational spending patterns and can automatically flag unusual transactions for human review while processing routine expenses seamlessly. Finance teams report saving 15-20 hours per week on receipt management tasks, allowing them to focus on higher-value activities like budget planning and strategic analysis. The robots aren't just chasing receipts - they're revolutionizing how businesses handle expense documentation and compliance.",
-        author: "Ramp Team",
-        date: "2024-01-08",
-        category: "Company News",
-        tags: ["Automation", "Receipts", "AI"],
-        readTime: "3 min read",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop"
-    },
-    {
-        id: 5,
-        title: "New on Ramp: June edition",
-        excerpt: "Check out the latest features and improvements we've shipped to help your team save time and money. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ipsam.",
-        fullContent: "Check out the latest features and improvements we've shipped to help your team save time and money. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ipsam. This month brings exciting updates to the Ramp platform designed to streamline your financial operations and provide deeper insights into your spending patterns. Our enhanced analytics dashboard now includes predictive spending forecasts, helping you anticipate budget needs up to six months in advance. The mobile app has been completely redesigned with a focus on user experience, featuring faster receipt capture, one-tap expense submission, and offline functionality for users on the go. We've also introduced advanced vendor management capabilities that automatically track contract terms, payment schedules, and renewal dates, ensuring you never miss important vendor commitments. Integration improvements include seamless connections with leading ERP systems and enhanced data synchronization capabilities. These updates represent our commitment to continuous innovation and our mission to make financial management effortless for businesses of all sizes.",
-        author: "Product Team",
-        date: "2024-01-05",
-        category: "Product Updates",
-        tags: ["Features", "Updates", "Product"],
-        readTime: "4 min read",
-        image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop"
-    },
-    {
-        id: 6,
-        title: "Introducing Ramp Treasury: Most banks hope you never see this",
-        excerpt: "Many banks make money by making their clients worse off — offering yield only if you lock up your cash with restrictions, minimums, transfer limits or brokerage.",
-        fullContent: "Many banks make money by making their clients worse off — offering yield only if you lock up your cash with restrictions, minimums, transfer limits or brokerage. Traditional banking relationships often come with hidden costs and artificial restrictions designed to maximize bank profits at the expense of business flexibility. Ramp Treasury changes this paradigm by offering transparent, high-yield cash management solutions without the typical banking restrictions that limit business agility. Our treasury product provides competitive yields on business cash while maintaining full liquidity and operational flexibility. Unlike traditional banks that profit from complex fee structures and limited access to funds, Ramp Treasury operates on a transparent model where your success is our success. The platform integrates seamlessly with your existing financial operations, providing real-time visibility into cash positions, automated sweep capabilities, and intelligent cash optimization recommendations. We believe businesses should earn maximum returns on their cash without sacrificing the operational flexibility they need to grow and respond to market opportunities.",
-        author: "Treasury Team",
-        date: "2024-01-03",
-        category: "Product Launch",
-        tags: ["Treasury", "Banking", "Yield"],
-        readTime: "7 min read",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
-    },
-    {
-        id: 7,
-        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        excerpt: "Many banks make money by making their clients worse off — offering yield only if you lock up your cash with restrictions, minimums, transfer limits or brokerage.",
-        fullContent: "Many banks make money by making their clients worse off — offering yield only if you lock up your cash with restrictions, minimums, transfer limits or brokerage. This comprehensive analysis explores the systemic issues within traditional banking that disadvantage business customers through complex fee structures and artificial limitations. The banking industry has historically operated on models that prioritize institutional profits over customer success, creating barriers to efficient cash management and financial growth. Modern businesses require flexible, transparent financial solutions that adapt to their operational needs rather than forcing them to conform to rigid banking structures. Our research indicates that businesses using traditional banking services lose an average of 3-5% of their potential returns due to restrictive policies and hidden fees. The shift toward transparent, customer-centric financial services represents a fundamental change in how businesses can optimize their cash management strategies. By eliminating artificial restrictions and focusing on genuine customer value, modern financial platforms are reshaping the landscape of business banking.",
-        author: "Treasury Team",
-        date: "2024-01-03",
-        category: "Product Launch",
-        tags: ["Treasury", "Banking", "Yield"],
-        readTime: "7 min read",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
-    }
+const predictPosts: BlogPost[] = [
+  {
+    "id": 4,
+    "title": "Using Predictive Analytics to Anticipate RIDDOR-Reportable Incidents",
+    "excerpt": "What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen?",
+    "fullContent": "Businesses obligated by RIDDOR often find themselves struggling to move from reactive reporting to proactive safety management. What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen? PreventixAI leverages predictive analytics to analyze historical incident patterns, environmental factors, and behavioral data to forecast potential high-risk scenarios that could result in serious injuries or dangerous occurrences needing RIDDOR reporting. The benefits of predictive RIDDOR management include: · Early Warnings: Identify trends in near-misses and unsafe conditions indicating heightened accident risk. · Resource Optimization: Focus training and safety investments where most needed based on risk forecasts. · Regulatory Confidence: Demonstrate to inspectors that your business is actively working to reduce reportable incidents. · Cost Savings: Prevent expensive injuries, insurance claims, and regulatory penalties by acting early. By shifting your approach from merely fulfilling RIDDOR obligations to anticipating incidents, you take a giant step towards a safer, more compliant workplace.",
+    "author": "Technology Team",
+    "date": "2025-08-29",
+    "category": "Predictive AI",
+    "tags": ["AI", "ACCIDENTS", "FORECAST", "RIDDOR", "HEALTH & SAFETY"],
+    "readTime": "3 min read",
+    "image": "https://preventixai-blogs-bucket.s3.ap-southeast-1.amazonaws.com/0_41X0S6HSK9EwxZEp.jpg"
+  }
 ];
+
+const preventPost : BlogPost[] = [
+
+  {
+    "id": 10,
+    "title": "Five Essential Steps to Prevent RIDDOR Incidents in Your Workplace.",
+    "excerpt": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm.",
+    "fullContent": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm. Preventing RIDDOR-reportable incidents starts with understanding common causes and implementing systematic safety measures.\nHere are five essential steps to help your organization reduce RIDDOR incidents:\n• Comprehensive Incident Reporting: Encourage consistent and honest reporting of all incidents and near misses, using digital tools to reduce underreporting.\n• Data-Driven Risk Assessments: Use AI-powered safety platforms that analyze incident data to uncover hidden risks and trends.\n• Targeted Training Programs: Identify safety knowledge gaps and tailor training to address specific risks associated with reportable incidents.\n• Regular Audits and Reviews: Conduct scheduled safety audits to verify the effectiveness of controls and adherence to compliance.\n• Automated Compliance Workflows: Leverage technology to automate RIDDOR report generation and submission, ensuring timely legal compliance and freeing up safety resources.\nPreventixAI supports you throughout these steps by providing an integrated platform that ensures incidents are reported correctly, risks are identified early, and preventive actions are effectively tracked—helping you build a truly safe and compliant workplace culture.",
+    "author": "Product Team",
+    "date": "2025-08-29",
+    "category": "RIDDOR",
+    "tags": ["RIDDOR", "AUDIT", "COMPLIANCE"],
+    "readTime": "3 min read",
+    "image": "https://preventixai-blogs-bucket.s3.ap-southeast-1.amazonaws.com/vlpum5wp5z0-768x512.jpg"
+  }
+  
+]
+
+const protectPosts : BlogPost[] = [{
+  "id": 10,
+  "title": "How Digital RIDDOR Reporting Enhances Workplace Safety Accountability",
+  "excerpt": "Paper based RIDDOR reporting is often time-consuming, prone to human error, and can lead to costly compliance failures.",
+  "fullContent": "In today’s fast-paced business environment, protecting your workforce means much more than reacting to incidents—it means ensuring accurate and timely reporting when accidents do occur. The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR) places strict legal obligations on businesses in the UK to report specific workplace incidents promptly to the HSE.\nPaper based RIDDOR reporting is often time-consuming, prone to human error, and can lead to costly compliance failures. Digital RIDDOR reporting systems, like PreventixAI’s platform, take the administrative burden off safety managers by instantly generating reports based on incidents logged in real time.\nWith digital RIDDOR compliance, businesses enhance accountability through:\n• Faster Notifications: Incident reports are submitted within legally required timelines, reducing risk of penalties.\n• Accurate Data: Digital form filling minimizes errors common in manual paper based reports.\n• Audit Trails: Digital records provide verifiable proof of compliance activities for inspections.\n• Improved Safety Culture: Easier compliance encourages more consistent incident reporting.\nAdopting AI-powered RIDDOR reporting not only protects your business from legal actions but also ensures your safety team is focused on what matters—caring for the wellbeing of employees and preventing future incidents.",
+  "author": "Product Team",
+  "date": "2025-08-29",
+  "category": "RIDDOR",
+  "tags": ["DIGITAL REPORTING", "RIDDOR", "SAFETY", "COMPLIANCE"],
+  "readTime": "5 min read",
+  "image": "https://preventixai-blogs-bucket.s3.ap-southeast-1.amazonaws.com/photo-1558963675-94dc9c4a66a9.jpeg"
+}
+
+
+]
+
 
 const editorsPicks: BlogPost[] = [
     {
@@ -344,7 +342,7 @@ export default function Blog() {
             </div>
   
             <Carousel>
-              {newsroomPosts.map((post) => (
+              {predictPosts.map((post) => (
                 <motion.div 
                   key={post.id} 
                   className="flex-[0_0_33.333%] px-3 mb-3"
@@ -409,7 +407,7 @@ export default function Blog() {
             </div>
   
             <Carousel>
-              {newsroomPosts.map((post) => (
+              {preventPost.map((post) => (
                 <motion.div 
                   key={post.id} 
                   className="flex-[0_0_33.333%] px-3 mb-3"
@@ -474,7 +472,7 @@ export default function Blog() {
             </div>
   
             <Carousel>
-              {newsroomPosts.map((post) => (
+              {protectPosts.map((post) => (
                 <motion.div 
                   key={post.id} 
                   className="flex-[0_0_33.333%] px-3 mb-3"
