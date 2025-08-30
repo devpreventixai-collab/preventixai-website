@@ -112,14 +112,17 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between h-20 px-6">
           {/* Logo with enhanced styling */}
           <div className="flex items-center space-x-3 group">
-            <div className={`
-              w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-2xl 
-              flex items-center justify-center shadow-lg transition-all duration-300 ease-out
-              group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-xl
-              ${scrolled ? "shadow-md" : ""}
-            `}>
-              <Shield className="w-6 h-6 text-white drop-shadow-sm" />
-            </div>
+          <div className={`
+  w-10 h-10
+  flex items-center justify-center transition-all duration-300 ease-out
+  group-hover:scale-110 group-hover:rotate-3
+`}>
+  <img 
+    src="https://preventixai-misc.s3.eu-west-2.amazonaws.com/preventix-logo-new.png" 
+    alt="Preventix AI Logo" 
+    className="w-12 h-12 object-contain"
+  />
+</div>
             <div className="flex flex-col leading-tight">
               <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 <a href="/" className="hover:from-blue-600 hover:to-purple-600 transition-all duration-300">
