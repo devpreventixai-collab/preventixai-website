@@ -47,13 +47,36 @@ const Footer = () => {
               <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+            
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/60">
-          <p>&copy; 2025 Preventix AI. All rights reserved.</p>
+        <div className="border-t border-secondary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-secondary-foreground/60 text-center md:text-left">
+            &copy; 2025 Preventix AI. All rights reserved.
+          </p>
+          
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
+            <a 
+              href="https://www.iubenda.com/privacy-policy/30950813" 
+              className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe text-secondary-foreground/60 hover:text-white transition-colors" 
+              title="Privacy Policy"
+            >
+              Privacy Policy
+            </a>
+            
+            <a 
+              href="https://www.iubenda.com/privacy-policy/30950813/cookie-policy" 
+              className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe text-secondary-foreground/60 hover:text-white transition-colors" 
+              title="Cookie Policy"
+            >
+              Cookie Policy
+            </a>
+            
+      
+          </div>
         </div>
       </div>
     </footer>
