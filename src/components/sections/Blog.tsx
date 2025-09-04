@@ -26,45 +26,7 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
-    {
-        id: 1,
-        title: "How legacy spend tools cost enterprises millions",
-        excerpt: "New Ramp data reveals the cost of status quo spend management and why modern solutions are essential for enterprise success.",
-        fullContent: "New Ramp data reveals the cost of status quo spend management and why modern solutions are essential for enterprise success. Legacy spend management systems are silently draining millions from enterprise budgets through inefficiencies, manual processes, and lack of real-time visibility. Our comprehensive analysis of enterprise spending patterns shows that companies using outdated tools lose an average of 12% of their annual spend to preventable inefficiencies. These systems typically lack automated approval workflows, real-time expense tracking, and intelligent fraud detection capabilities that modern businesses require. The hidden costs extend beyond direct financial losses - they include employee productivity losses, delayed financial reporting, compliance risks, and missed opportunities for strategic cost optimization. Forward-thinking finance leaders are recognizing that investing in modern spend management technology isn't just about efficiency - it's about competitive advantage in an increasingly complex business environment.",
-        author: "Sarah Johnson",
-        date: "2024-01-15",
-        category: "Enterprise",
-        tags: ["Spend Management", "Enterprise", "Cost Optimization"],
-        readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        featured: true
-    },
-    {
-        id: 2,
-        title: "4 strategies for enterprise finance teams to drive down spend",
-        excerpt: "Learn practical approaches that leading finance teams use to optimize spending and improve financial efficiency across the organization.",
-        fullContent: "Learn practical approaches that leading finance teams use to optimize spending and improve financial efficiency across the organization. Strategy 1: Implement real-time spend visibility - Modern finance teams leverage automated reporting and dashboards that provide instant insights into spending patterns, enabling proactive decision-making rather than reactive cost-cutting. Strategy 2: Automate approval workflows - By digitizing and streamlining approval processes, teams can eliminate bottlenecks while maintaining proper spend controls and reducing processing time by up to 75%. Strategy 3: Negotiate strategic vendor relationships - Rather than treating vendor management as a procurement afterthought, leading teams actively manage supplier relationships through data-driven negotiations and performance monitoring. Strategy 4: Deploy intelligent expense categorization - Advanced AI-powered systems can automatically categorize expenses, identify anomalies, and suggest optimization opportunities that human reviewers might miss. These strategies work synergistically to create a comprehensive approach to spend optimization that goes beyond simple cost-cutting to enable strategic financial management.",
-        author: "Ian McCue",
-        date: "2024-01-12",
-        category: "Finance Strategy",
-        tags: ["Finance", "Strategy", "Optimization"],
-        readTime: "8 min read",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        featured: true
-    },
-    {
-        id: 3,
-        title: "The future of corporate expense management",
-        excerpt: "Discover how AI and automation are transforming expense management for modern businesses and what it means for finance teams.",
-        fullContent: "Discover how AI and automation are transforming expense management for modern businesses and what it means for finance teams. The corporate expense management landscape is undergoing a fundamental transformation driven by artificial intelligence and machine learning technologies. Traditional manual processes that once required hours of human intervention are now being automated, allowing finance teams to focus on strategic initiatives rather than administrative tasks. AI-powered receipt scanning can now process and categorize expenses with 99.5% accuracy, while intelligent policy enforcement prevents out-of-policy spending before it occurs. Predictive analytics help organizations forecast spending trends and identify potential cost savings opportunities months in advance. The integration of real-time data feeds from credit cards, bank accounts, and vendor systems creates a comprehensive financial ecosystem that provides unprecedented visibility into organizational spending. As these technologies mature, we're seeing the emergence of autonomous finance functions where routine transactions are processed without human intervention, compliance is monitored continuously, and strategic insights are generated automatically.",
-        author: "Emily Rodriguez",
-        date: "2024-01-10",
-        category: "Technology",
-        tags: ["AI", "Automation", "Expense Management"],
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        featured: true
-    }
+
 ];
 
 const predictPosts: BlogPost[] = [
@@ -117,54 +79,7 @@ const protectPosts : BlogPost[] = [{
 
 
 const editorsPicks: BlogPost[] = [
-    {
-        id: 7,
-        title: "We Raised $560M to build the future of finance",
-        excerpt: "Today, Ramp agents not just chasing receipts. They're filing your expenses, booking your travel, paying your invoices, and closing your books. And we've raised another $560M at a $22.5 billion valuation to...",
-        fullContent: "Today, Ramp agents not just chasing receipts. They're filing your expenses, booking your travel, paying your invoices, and closing your books. And we've raised another $560M at a $22.5 billion valuation to accelerate our vision of autonomous finance. This significant funding round reflects the market's confidence in our approach to transforming enterprise financial operations through intelligent automation. The capital will be invested in expanding our AI capabilities, growing our engineering team, and developing new products that further automate routine financial tasks. Our agents already handle millions of transactions monthly, saving finance teams thousands of hours while improving accuracy and compliance. The future we're building isn't just about better software - it's about fundamentally reimagining how businesses manage their financial operations. With this new funding, we're positioned to accelerate our roadmap and deliver on our mission to make finance effortless for every business. The market opportunity is enormous, and we're just getting started on transforming how companies handle their financial operations.",
-        author: "Leadership Team",
-        date: "2024-01-01",
-        category: "Company",
-        tags: ["Funding", "Growth", "Vision"],
-        readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=250&fit=crop"
-    },
-    {
-        id: 8,
-        title: "Ramp now supports Sunshine Act compliance",
-        excerpt: "New capabilities built into Ramp make it much easier for life sciences companies to track transfers of value with healthcare providers.",
-        fullContent: "New capabilities built into Ramp make it much easier for life sciences companies to track transfers of value with healthcare providers. The Physician Payments Sunshine Act requires detailed reporting of financial relationships between healthcare companies and medical professionals, creating complex compliance obligations for life sciences organizations. Our new compliance module automates the tracking and reporting of these transfers of value, reducing the administrative burden on compliance teams while ensuring accurate and timely submissions. The system automatically categorizes payments, maintains detailed audit trails, and generates reports in formats required by regulatory agencies. Healthcare companies can now manage their entire compliance workflow within Ramp, from initial payment authorization through final regulatory submission. This integration eliminates the need for separate compliance tracking systems while providing the detailed documentation and reporting capabilities required for Sunshine Act compliance. The feature includes built-in validation rules to catch potential compliance issues before they become problems, helping organizations maintain their regulatory standing while focusing on their core mission of advancing healthcare.",
-        author: "Compliance Team",
-        date: "2023-12-28",
-        category: "Compliance",
-        tags: ["Healthcare", "Compliance", "Regulations"],
-        readTime: "4 min read",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop"
-    },
-    {
-        id: 9,
-        title: "Ramp named a Leader in 2025 IDC MarketScape",
-        excerpt: "Gartner has recognized Ramp as a leader for AI-Enabled Travel and Expense Applications for Midmarket and Small Business. jhbf sjvdbvsd",
-        fullContent: "Gartner has recognized Ramp as a leader for AI-Enabled Travel and Expense Applications for Midmarket and Small Business. This recognition validates our commitment to innovation and customer success in the rapidly evolving expense management space. The IDC MarketScape evaluation assessed vendors across multiple criteria including current capabilities, future strategy, customer satisfaction, and market presence. Our leadership position reflects the strength of our AI-powered platform, comprehensive feature set, and proven track record of helping businesses optimize their financial operations. The report specifically highlighted our advanced automation capabilities, seamless integration ecosystem, and exceptional customer support as key differentiators in the market. This recognition comes at a time of significant growth for Ramp, with increasing adoption among enterprise customers who are seeking more intelligent, automated solutions for their financial management needs. We're proud of this achievement and remain committed to pushing the boundaries of what's possible in financial technology.",
-        author: "Marketing Team",
-        date: "2023-12-25",
-        category: "Recognition",
-        tags: ["Award", "Leadership", "AI"],
-        readTime: "3 min read",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop"
-    },
-    {
-        id: 10,
-        title: "How Poshmark exceeded their free cash flow goals with Ramp",
-        excerpt: "Learn how Poshmark achieved its free cash flow goals in seven months instead of 12 and cut its monthly close time in half after optimizing cash flow, forecasting, and financial strategy with Ramp.",
-        fullContent: "Learn how Poshmark achieved its free cash flow goals in seven months instead of 12 and cut its monthly close time in half after optimizing cash flow, forecasting, and financial strategy with Ramp. This case study demonstrates the transformative impact of modern spend management on enterprise financial performance. Poshmark's finance team faced challenges with manual expense processing, limited spending visibility, and inefficient approval workflows that were hindering their ability to achieve aggressive growth targets. By implementing Ramp's comprehensive financial platform, they gained real-time visibility into cash flows, automated routine financial processes, and established intelligent spending controls that aligned with their strategic objectives. The results were immediate and substantial - monthly close processes that previously took weeks were completed in days, spending forecasts became accurate to within 2%, and the finance team could focus on strategic initiatives rather than administrative tasks. The accelerated path to free cash flow goals enabled Poshmark to invest more aggressively in growth initiatives while maintaining strict financial discipline. This success story illustrates how the right financial technology can become a competitive advantage for growing companies.",
-        author: "Case Studies Team",
-        date: "2023-12-22",
-        category: "Customer Story",
-        tags: ["Case Study", "Success", "Efficiency"],
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
-    }
+   
 ];
 
 interface CarouselProps {
