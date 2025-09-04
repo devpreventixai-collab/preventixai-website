@@ -26,7 +26,20 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
-
+    {
+        id: 1,
+        title: "",
+        excerpt: "",
+        fullContent: "",
+        author: "",
+        date: "",
+        category: "",
+        tags: ["", "", ""],
+        readTime: "",
+        image: "",
+        featured: true
+    },
+    
 ];
 
 const predictPosts: BlogPost[] = [
@@ -79,6 +92,18 @@ const protectPosts : BlogPost[] = [{
 
 
 const editorsPicks: BlogPost[] = [
+    {
+        id: 7,
+        title: "",
+        excerpt: "",
+        fullContent: "",
+        author: "",
+        date: "",
+        category: "",
+        tags: ["", "", ""],
+        readTime: "",
+        image: ""
+    },
    
 ];
 
