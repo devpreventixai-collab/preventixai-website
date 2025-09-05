@@ -8,7 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import blogHeroImage from "@/assets/blog-hero.jpg";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 
 interface BlogPost {
