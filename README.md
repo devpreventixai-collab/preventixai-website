@@ -1,74 +1,120 @@
-# Welcome to your Lovable project
+# PreventixAI - Workplace Safety Analysis & Accident Prevention Platform
 
-## Project info
+## 🚀 Project Overview
 
-**URL**: https://lovable.dev/projects/214101d4-c373-4b43-ada7-3d60af89f6e0
+PreventixAI is an innovative AI-powered workplace safety platform designed to transform how organizations approach workplace safety through the power of **Predict**, **Prevent**, and **Protect**. This modern web application serves as the company's primary marketing and information hub, showcasing cutting-edge solutions for workplace safety analysis, accident prevention, and RIDDOR compliance.
 
-## How can I edit this code?
+## 🎯 Mission
 
-There are several ways of editing your application.
+To revolutionize workplace safety by leveraging artificial intelligence to predict risks, prevent accidents, and protect workers before incidents occur. PreventixAI moves organizations from reactive safety management to proactive risk prevention.
 
-**Use Lovable**
+## ✨ Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/214101d4-c373-4b43-ada7-3d60af89f6e0) and start prompting.
+### 🔮 **PREDICT**
+- **Predictive Analytics**: Advanced AI algorithms analyze historical incident patterns, environmental factors, and behavioral data
+- **Risk Forecasting**: Identify potential RIDDOR-reportable incidents before they happen
+- **Early Warning Systems**: Real-time alerts for high-risk scenarios and unsafe conditions
+- **Trend Analysis**: Comprehensive insights into safety patterns and emerging risks
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🛡️ **PREVENT** 
+- **Proactive Safety Measures**: Systematic approach to incident prevention
+- **Comprehensive Risk Assessments**: AI-powered analysis to uncover hidden workplace risks
+- **Targeted Training Programs**: Customized safety training based on identified risk patterns
+- **Safety Compliance Workflows**: Automated processes to ensure regulatory adherence
 
-**Use your preferred IDE**
+### 🔒 **PROTECT**
+- **Digital RIDDOR Reporting**: Streamlined, automated compliance reporting system
+- **Real-time Monitoring**: Continuous workplace safety surveillance
+- **Audit Trail Management**: Complete documentation for regulatory inspections
+- **Compliance Assurance**: Ensure timely and accurate incident reporting
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Getting Started
 
-Follow these steps:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd preventixai-website
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-**Edit a file directly in GitHub**
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
 
-**Use GitHub Codespaces**
+## 📄 Available Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build optimized production bundle
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+- `npm run deploy` - Build and deploy to GitHub Pages
 
-## What technologies are used for this project?
+## 🎨 Design Philosophy
 
-This project is built with:
+The website embodies PreventixAI's commitment to safety through:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Clean, Professional Design**: Modern UI that instills confidence and trust
+- **Intuitive Navigation**: Easy access to information about safety solutions
+- **Responsive Layout**: Optimal experience across all devices
+- **Accessibility**: WCAG compliant design for inclusive user experience
+- **Performance**: Fast loading times and smooth interactions
 
-## How can I deploy this project?
+## 📊 Key Sections
 
-Simply open [Lovable](https://lovable.dev/projects/214101d4-c373-4b43-ada7-3d60af89f6e0) and click on Share -> Publish.
+### Homepage Features
+- **Hero Section**: Compelling introduction to PreventixAI's mission
+- **Problem Statement**: Addressing current workplace safety challenges
+- **Solution Overview**: Detailed explanation of the Predict-Prevent-Protect approach
+- **Features Showcase**: Interactive presentation of platform capabilities
+- **Pricing Plans**: Transparent pricing for different organizational needs
+- **Contact Integration**: Easy ways for prospects to get in touch
 
-## Can I connect a custom domain to my Lovable project?
+### Blog Platform
+- **Content Categories**: Organized by Predict, Prevent, and Protect themes
+- **Interactive Articles**: Expandable content with smooth animations
+- **Search Functionality**: Easy content discovery
+- **Expert Insights**: Thought leadership in workplace safety
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-# preventixai-website
+## 📈 Analytics & Performance
+
+- **Core Web Vitals**: Optimized for Google's performance metrics
+- **SEO Optimized**: Meta tags, structured data, and semantic HTML
+- **Analytics Ready**: Easy integration with tracking platforms
+- **Performance Monitoring**: Built-in optimization for fast loading
+
+
+
+## 📞 Support & Contact
+
+For questions about the PreventixAI platform or this website:
+- Visit our contact page for direct communication
+- Check our FAQ section for common questions
+- Explore our blog for the latest insights on workplace safety
+
+---
+
+**PreventixAI** - Transforming workplace safety through intelligent prediction, prevention, and protection.

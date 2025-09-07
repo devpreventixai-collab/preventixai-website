@@ -26,19 +26,18 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
-    {
-        id: 1,
-        title: "",
-        excerpt: "",
-        fullContent: "",
-        author: "",
-        date: "",
-        category: "",
-        tags: ["", "", ""],
-        readTime: "",
-        image: "",
-        featured: true
-    },
+  {
+    "id": 1,
+    "title": "Using Predictive Analytics to Anticipate RIDDOR-Reportable Incidents",
+    "excerpt": "What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen?",
+    "fullContent": "Businesses obligated by RIDDOR often find themselves struggling to move from reactive reporting to proactive safety management. What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen? PreventixAI leverages predictive analytics to analyze historical incident patterns, environmental factors, and behavioral data to forecast potential high-risk scenarios that could result in serious injuries or dangerous occurrences needing RIDDOR reporting. The benefits of predictive RIDDOR management include: · Early Warnings: Identify trends in near-misses and unsafe conditions indicating heightened accident risk. · Resource Optimization: Focus training and safety investments where most needed based on risk forecasts. · Regulatory Confidence: Demonstrate to inspectors that your business is actively working to reduce reportable incidents. · Cost Savings: Prevent expensive injuries, insurance claims, and regulatory penalties by acting early. By shifting your approach from merely fulfilling RIDDOR obligations to anticipating incidents, you take a giant step towards a safer, more compliant workplace.",
+    "author": "Technology Team",
+    "date": "2025-08-29",
+    "category": "Predictive AI",
+    "tags": ["AI", "ACCIDENTS", "FORECAST", "RIDDOR", "HEALTH & SAFETY"],
+    "readTime": "3 min read",
+    "image": "https://preventixai-blogs-bucket.s3.ap-southeast-1.amazonaws.com/0_41X0S6HSK9EwxZEp.jpg"
+  }
     
 ];
 
@@ -60,7 +59,7 @@ const predictPosts: BlogPost[] = [
 const preventPost : BlogPost[] = [
 
   {
-    "id": 10,
+    "id": 8,
     "title": "Five Essential Steps to Prevent RIDDOR Incidents in Your Workplace.",
     "excerpt": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm.",
     "fullContent": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm. Preventing RIDDOR-reportable incidents starts with understanding common causes and implementing systematic safety measures.\nHere are five essential steps to help your organization reduce RIDDOR incidents:\n• Comprehensive Incident Reporting: Encourage consistent and honest reporting of all incidents and near misses, using digital tools to reduce underreporting.\n• Data-Driven Risk Assessments: Use AI-powered safety platforms that analyze incident data to uncover hidden risks and trends.\n• Targeted Training Programs: Identify safety knowledge gaps and tailor training to address specific risks associated with reportable incidents.\n• Regular Audits and Reviews: Conduct scheduled safety audits to verify the effectiveness of controls and adherence to compliance.\n• Automated Compliance Workflows: Leverage technology to automate RIDDOR report generation and submission, ensuring timely legal compliance and freeing up safety resources.\nPreventixAI supports you throughout these steps by providing an integrated platform that ensures incidents are reported correctly, risks are identified early, and preventive actions are effectively tracked—helping you build a truly safe and compliant workplace culture.",
@@ -92,18 +91,18 @@ const protectPosts : BlogPost[] = [{
 
 
 const editorsPicks: BlogPost[] = [
-    {
-        id: 7,
-        title: "",
-        excerpt: "",
-        fullContent: "",
-        author: "",
-        date: "",
-        category: "",
-        tags: ["", "", ""],
-        readTime: "",
-        image: ""
-    },
+  {
+    "id": 7,
+    "title": "Five Essential Steps to Prevent RIDDOR Incidents in Your Workplace.",
+    "excerpt": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm.",
+    "fullContent": "Reporting incidents under RIDDOR is not just a legal responsibility—it's a call to action to prevent future harm. Preventing RIDDOR-reportable incidents starts with understanding common causes and implementing systematic safety measures.\nHere are five essential steps to help your organization reduce RIDDOR incidents:\n• Comprehensive Incident Reporting: Encourage consistent and honest reporting of all incidents and near misses, using digital tools to reduce underreporting.\n• Data-Driven Risk Assessments: Use AI-powered safety platforms that analyze incident data to uncover hidden risks and trends.\n• Targeted Training Programs: Identify safety knowledge gaps and tailor training to address specific risks associated with reportable incidents.\n• Regular Audits and Reviews: Conduct scheduled safety audits to verify the effectiveness of controls and adherence to compliance.\n• Automated Compliance Workflows: Leverage technology to automate RIDDOR report generation and submission, ensuring timely legal compliance and freeing up safety resources.\nPreventixAI supports you throughout these steps by providing an integrated platform that ensures incidents are reported correctly, risks are identified early, and preventive actions are effectively tracked—helping you build a truly safe and compliant workplace culture.",
+    "author": "Product Team",
+    "date": "2025-08-29",
+    "category": "RIDDOR",
+    "tags": ["RIDDOR", "AUDIT", "COMPLIANCE"],
+    "readTime": "3 min read",
+    "image": "https://preventixai-blogs-bucket.s3.ap-southeast-1.amazonaws.com/vlpum5wp5z0-768x512.jpg"
+  }
    
 ];
 
