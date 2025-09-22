@@ -88,7 +88,7 @@ const Hero = () => {
                 <div className="w-full h-full relative">
                   <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-white/90 backdrop-blur-sm border border-white/50">
                     <img 
-                      src="https://preventixai-dev-media-bucket.s3.eu-west-2.amazonaws.com/luke-chesser-JKUTrJ4vK00-unsplash.jpg" 
+                      src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/photo-1551288049-bebda4e38f71.avif" 
                       alt="Modern workplace safety technology dashboard"
                       className="w-full h-full object-cover"
                     />
@@ -98,7 +98,7 @@ const Hero = () => {
                   {/* Floating secondary image - adjusted for mobile */}
                   <div className="absolute -top-4 lg:-top-8 -left-4 lg:-left-8 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden shadow-xl bg-white/95 backdrop-blur-sm border border-white/60">
                     <img 
-                      src="https://preventixai-dev-media-bucket.s3.eu-west-2.amazonaws.com/carlos-muza-hpjSkU2UYSU-unsplash.jpg" 
+                      src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/photo-1460925895917-afdab827c52f.avif" 
                       alt="Safety equipment and hard hat"
                       className="w-full h-full object-cover"
                     />
@@ -107,7 +107,7 @@ const Hero = () => {
                   {/* Small floating badge - adjusted for mobile */}
                   <div className="absolute -bottom-3 lg:-bottom-6 -right-3 lg:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-white/95 backdrop-blur-sm border border-white/60 flex items-center justify-center">
                     <img 
-                      src="https://preventixai-dev-media-bucket.s3.eu-west-2.amazonaws.com/Screenshot+2025-08-28+at+01.58.26.png" 
+                      src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/photo-1558963675-94dc9c4a66a9.avif" 
                       alt="Safety Analysis chart"
                       className="w-full h-full object-cover"
                     />

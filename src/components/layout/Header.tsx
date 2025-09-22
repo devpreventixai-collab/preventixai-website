@@ -118,7 +118,7 @@ const Header = () => {
   group-hover:scale-110 group-hover:rotate-3
 `}>
   <img 
-    src="https://preventixai-misc.s3.eu-west-2.amazonaws.com/preventix-logo-new.png" 
+    src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/preventix-logo-new-removebg-preview+(1).png" 
     alt="Preventix AI Logo" 
     className="w-12 h-12 object-contain"
   />
