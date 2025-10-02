@@ -1,28 +1,140 @@
+# Preventix AI - Comprehensive .htaccess Configuration
+# Performance, Security, and SEO Optimizations
+
 RewriteEngine On
 
-# IONOS-specific MIME type configuration
+# Force HTTPS
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# MIME Type Configuration
 <IfModule mod_mime.c>
-    # Ensure JavaScript files are served with correct MIME type
+    # JavaScript (IONOS-specific)
     AddType text/javascript .js
     AddType text/javascript .mjs
     AddType application/javascript .js
     AddType application/javascript .mjs
     
-    # Other important MIME types
+    # CSS and HTML
     AddType text/css .css
     AddType text/html .html
+    
+    # Images
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType image/svg+xml .svg
+    
+    # Fonts
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+    
+    # Other
+    AddType application/json .json
+    AddType application/xml .xml
+    AddType text/xml .xml
+    
+    # UTF-8 Encoding
+    AddCharset utf-8 .html .css .js .xml .json .rss .atom
 </IfModule>
 
-# Set explicit headers for JavaScript modules
+# Security Headers
 <IfModule mod_headers.c>
+    # JavaScript MIME type (IONOS specific)
     <FilesMatch "\.(js|mjs)$">
         Header always set Content-Type "text/javascript; charset=utf-8"
         Header always set X-Content-Type-Options "nosniff"
     </FilesMatch>
+    
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# Client-side routing for React
+# Enable Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # Default
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+  # Cache static assets
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|avif|svg|css|js|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+  
+  # Don't cache HTML
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# Prevent Directory Browsing
+Options -Indexes
+
+# Client-side routing for React SPA
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule . /index.html [L]
+
+# Custom Error Pages
+ErrorDocument 404 /index.html
