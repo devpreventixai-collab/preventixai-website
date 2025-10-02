@@ -1,12 +1,91 @@
 import React from 'react';
-import { NextSeo } from 'next-seo';
-
+import SEO from '../SEO';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 const RiddorPost = () => {
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What does RIDDOR stand for? Complete Guide to RIDDOR Reporting 2025",
+    "description": "Comprehensive guide to RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations). Learn what RIDDOR stands for, reportable incidents, who must report, timescales, and compliance requirements.",
+    "image": "https://middleclassopinion-yvboe.wordpress.com/wp-content/uploads/2025/09/preventix-blog-post-1.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Preventix AI"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Preventix AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://preventixai-misc.s3.eu-west-2.amazonaws.com/preventix-logo-new.png"
+      }
+    },
+    "datePublished": "2025-09-15",
+    "dateModified": "2025-10-02",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://preventix.ai/blog/riddor-explained-what-you-need-to-know/"
+    },
+    "keywords": "RIDDOR, RIDDOR reporting, RIDDOR compliance, what does RIDDOR stand for, RIDDOR meaning, RIDDOR legislation, HSE reporting, workplace safety, reportable incidents, specified injuries, dangerous occurrences",
+    "articleSection": "Workplace Safety",
+    "wordCount": 2500
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://preventix.ai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://preventix.ai/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What does RIDDOR stand for?",
+        "item": "https://preventix.ai/blog/riddor-explained-what-you-need-to-know/"
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO 
+        title="What does RIDDOR stand for? Complete RIDDOR Reporting Guide 2025 | Preventix AI"
+        description="Comprehensive guide to RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations). Learn what RIDDOR means, reportable incidents, HSE compliance, reporting timescales, and penalties for non-compliance. Expert advice from Preventix AI."
+        keywords="RIDDOR, what does RIDDOR stand for, RIDDOR meaning, RIDDOR reporting, RIDDOR compliance, RIDDOR legislation, RIDDOR HSE, RIDDOR reportable injuries, RIDDOR dangerous occurrences, RIDDOR burns, RIDDOR broken toe, over seven day injuries, specified injuries, workplace safety reporting, HSE compliance, RIDDOR report forms, RIDDOR reporting timescales, RIDDOR fines, preventix, workplace incident reporting"
+        canonicalUrl="https://preventix.ai/blog/riddor-explained-what-you-need-to-know/"
+        ogImage="https://middleclassopinion-yvboe.wordpress.com/wp-content/uploads/2025/09/preventix-blog-post-1.png"
+        ogType="article"
+        article={{
+          publishedTime: "2025-09-15T10:00:00Z",
+          modifiedTime: "2025-10-02T07:15:00Z",
+          author: "Preventix AI Team",
+          section: "Workplace Safety",
+          tags: ["RIDDOR", "Workplace Safety", "HSE Compliance", "Safety Reporting", "UK Safety Regulations"]
+        }}
+        structuredData={[articleStructuredData, breadcrumbStructuredData]}
+      />
+      
+      <Header />
     
     <div className="min-h-screen bg-white">
+    <article className="max-w-4xl mt-16 mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          {/* Main Heading */}
+          <h1 className="text-4xl font-bold mb-2 text-gray-900 mt-8">
+            RIDDOR Explained: What You Need to Know
+          </h1>
+        </article>
       <article className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {/* Table of Contents */}
         <nav className="mb-12 bg-gray-50 p-6 rounded-lg">
@@ -341,6 +420,7 @@ const RiddorPost = () => {
         </p>
       </article>
     </div>
+    <Footer />
     </>
   );
 };
