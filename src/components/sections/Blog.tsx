@@ -8,7 +8,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import blogHeroImage from "@/assets/blog-hero.jpg";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 interface BlogPost {
@@ -23,11 +24,25 @@ interface BlogPost {
     readTime: string;
     image: string;
     featured?: boolean;
+    slug?: string;
 }
 
 const blogPosts: BlogPost[] = [
   {
     "id": 1,
+    "title": "RIDDOR Explained: What You Need to Know",
+    "excerpt": "Comprehensive guide to RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations) - understand reporting requirements, timescales, and compliance.",
+    "fullContent": "RIDDOR stands for the Reporting of Injuries, Diseases and Dangerous Occurrences Regulations. This critical piece of legislation, established in 2013, forms the cornerstone of workplace safety reporting across the United Kingdom. The RIDDOR framework requires employers and responsible persons to report and keep records of serious workplace incidents.",
+    "author": "Safety Team",
+    "date": "2025-10-02",
+    "category": "Compliance",
+    "tags": ["RIDDOR", "HEALTH & SAFETY", "COMPLIANCE", "REGULATIONS"],
+    "readTime": "10 min read",
+    "image": "https://middleclassopinion-yvboe.wordpress.com/wp-content/uploads/2025/09/preventix-blog-post-1.png",
+    "slug": "/blog/riddor-explained-what-you-need-to-know"
+  },
+  {
+    "id": 2,
     "title": "Using Predictive Analytics to Anticipate RIDDOR-Reportable Incidents",
     "excerpt": "What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen?",
     "fullContent": "Businesses obligated by RIDDOR often find themselves struggling to move from reactive reporting to proactive safety management. What if you could predict which workplace situations are likely to escalate into RIDDOR-reportable incidents before they happen? PreventixAI leverages predictive analytics to analyze historical incident patterns, environmental factors, and behavioral data to forecast potential high-risk scenarios that could result in serious injuries or dangerous occurrences needing RIDDOR reporting. The benefits of predictive RIDDOR management include: · Early Warnings: Identify trends in near-misses and unsafe conditions indicating heightened accident risk. · Resource Optimization: Focus training and safety investments where most needed based on risk forecasts. · Regulatory Confidence: Demonstrate to inspectors that your business is actively working to reduce reportable incidents. · Cost Savings: Prevent expensive injuries, insurance claims, and regulatory penalties by acting early. By shifting your approach from merely fulfilling RIDDOR obligations to anticipating incidents, you take a giant step towards a safer, more compliant workplace.",
@@ -239,6 +254,7 @@ export default function Blog() {
                           </div>
                           <span className="text-sm text-primary font-medium">{post.readTime}</span>
                         </div>
+                        <Link to={post.slug || `/blog/${post.id}`}>
                         <motion.button
                           whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
                           whileTap={{ scale: 0.95 }}
@@ -246,6 +262,7 @@ export default function Blog() {
                         >
                           Read More
                         </motion.button>
+                        </Link>
                       </div>
   
                       {/* Image Side */}
@@ -289,46 +306,48 @@ export default function Blog() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
-                    <div className="relative overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                          {post.category}
-                        </Badge>
-                      </div>
-                    </div>
-  
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                        {post.title}
-                      </h3>
-                      <ExpandableContent 
-                        excerpt={post.excerpt} 
-                        fullContent={post.fullContent}
-                      />
-                      <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center gap-1">
-                            <User className="h-4 w-4" />
-                            <span>{post.author}</span>
-                          </div>
+                  <Link to={post.slug || '#'} className="block">
+                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm h-full">
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                            {post.category}
+                          </Badge>
                         </div>
-                        <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
-                      >
-                        Read Article
-                      </motion.button>
-                    </CardContent>
-                  </Card>
+      
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                          {post.title}
+                        </h3>
+                        <ExpandableContent 
+                          excerpt={post.excerpt} 
+                          fullContent={post.fullContent}
+                        />
+                        <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-1">
+                              <User className="h-4 w-4" />
+                              <span>{post.author}</span>
+                            </div>
+                          </div>
+                          <span className="font-medium text-primary">{post.readTime}</span>
+                        </div>
+                        <motion.div
+                          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                          whileTap={{ scale: 0.95 }}
+                          className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300 text-center"
+                        >
+                          Read Article
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </Carousel>
@@ -354,46 +373,48 @@ export default function Blog() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
-                    <div className="relative overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                          {post.category}
-                        </Badge>
-                      </div>
-                    </div>
-  
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                        {post.title}
-                      </h3>
-                      <ExpandableContent 
-                        excerpt={post.excerpt} 
-                        fullContent={post.fullContent}
-                      />
-                      <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center gap-1">
-                            <User className="h-4 w-4" />
-                            <span>{post.author}</span>
-                          </div>
+                  <Link to={post.slug || '#'} className="block">
+                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm h-full">
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                            {post.category}
+                          </Badge>
                         </div>
-                        <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
-                      >
-                        Read Article
-                      </motion.button>
-                    </CardContent>
-                  </Card>
+      
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                          {post.title}
+                        </h3>
+                        <ExpandableContent 
+                          excerpt={post.excerpt} 
+                          fullContent={post.fullContent}
+                        />
+                        <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-1">
+                              <User className="h-4 w-4" />
+                              <span>{post.author}</span>
+                            </div>
+                          </div>
+                          <span className="font-medium text-primary">{post.readTime}</span>
+                        </div>
+                        <motion.div
+                          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                          whileTap={{ scale: 0.95 }}
+                          className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300 text-center"
+                        >
+                          Read Article
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </Carousel>
@@ -419,46 +440,48 @@ export default function Blog() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm">
-                    <div className="relative overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                          {post.category}
-                        </Badge>
-                      </div>
-                    </div>
-  
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                        {post.title}
-                      </h3>
-                      <ExpandableContent 
-                        excerpt={post.excerpt} 
-                        fullContent={post.fullContent}
-                      />
-                      <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center gap-1">
-                            <User className="h-4 w-4" />
-                            <span>{post.author}</span>
-                          </div>
+                  <Link to={post.slug || '#'} className="block">
+                    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-card/80 backdrop-blur-sm h-full">
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-medium transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                            {post.category}
+                          </Badge>
                         </div>
-                        <span className="font-medium text-primary">{post.readTime}</span>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300"
-                      >
-                        Read Article
-                      </motion.button>
-                    </CardContent>
-                  </Card>
+      
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                          {post.title}
+                        </h3>
+                        <ExpandableContent 
+                          excerpt={post.excerpt} 
+                          fullContent={post.fullContent}
+                        />
+                        <div className="flex items-center justify-between text-sm text-muted-foreground border-t pt-4">
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-1">
+                              <User className="h-4 w-4" />
+                              <span>{post.author}</span>
+                            </div>
+                          </div>
+                          <span className="font-medium text-primary">{post.readTime}</span>
+                        </div>
+                        <motion.div
+                          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
+                          whileTap={{ scale: 0.95 }}
+                          className="mt-4 w-full px-6 py-2 bg-primary text-white rounded-full font-medium transition-colors duration-300 text-center"
+                        >
+                          Read Article
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </Carousel>

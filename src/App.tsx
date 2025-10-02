@@ -9,6 +9,7 @@ import Blog from "./components/sections/Blog";
 import FAQ from "./components/sections/FAQ";
 import { ContactProvider } from './context/ContactContext';
 import Contact from "./components/sections/Contact";
+import RiddorPost from "./components/blog/RiddorPost";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
            <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/riddor-explained-what-you-need-to-know/" element={<RiddorPost />} />
            <Route path="/faq" element={<FAQ />} />
            <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
