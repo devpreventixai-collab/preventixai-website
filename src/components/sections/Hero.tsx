@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+
+  const handleGetStarted = (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      if (email && email.trim()) {
+        sessionStorage.setItem('prefilledEmail', email.trim());
+        console.log('Stored email in sessionStorage:', email.trim());
+      } else {
+        sessionStorage.removeItem('prefilledEmail');
+        console.log('Removed email from sessionStorage (empty)');
+      }
+    } catch (error) {
+      console.warn('SessionStorage error:', error);
+    }
+    navigate('/contact');
+  };
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+    <section className="relative min-h-svh bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-x-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-white/20"></div>
@@ -41,16 +60,22 @@ const Hero = () => {
 
                 {/* CTA section */}
                 <div className="mb-6 lg:mb-8">
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/50">
+                  <form onSubmit={handleGetStarted} className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/50">
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="What's your work email?"
                       className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-slate-800 placeholder-slate-500 border-0 focus:outline-none bg-transparent text-sm sm:text-base"
+                      required
                     />
-                    <button className="bg-gradient-to-r from-orange-400 to-amber-400 hover:from-orange-500 hover:to-amber-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 shadow-lg text-sm sm:text-base">
+                    <button 
+                      type="submit"
+                      className="bg-gradient-to-r from-orange-400 to-amber-400 hover:from-orange-500 hover:to-amber-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 shadow-lg text-sm sm:text-base"
+                    >
                       Get started for free
                     </button>
-                  </div>
+                  </form>
                 </div>
 
                 {/* Features preview - centered and with overflow handling */}

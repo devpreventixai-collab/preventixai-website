@@ -15,6 +15,24 @@ const Contact: React.FC = () => {
     message: '',
     consent: false,
   });
+
+  // Use useEffect to read prefilled email after component mounts
+  useEffect(() => {
+    try {
+      const prefilledEmail = sessionStorage.getItem('prefilledEmail');
+      console.log('Reading from sessionStorage - prefilledEmail:', prefilledEmail);
+      if (prefilledEmail && prefilledEmail.trim()) {
+        setFormData(prev => ({ ...prev, email: prefilledEmail.trim() }));
+        sessionStorage.removeItem('prefilledEmail');
+        console.log('Email prefilled successfully:', prefilledEmail.trim());
+      } else {
+        console.log('No prefilled email found in sessionStorage');
+      }
+    } catch (error) {
+      // Handle cases where sessionStorage is not available
+      console.warn('SessionStorage not available:', error);
+    }
+  }, []);
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -100,7 +118,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div id="contact" className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <Header />
       <main className="pt-16"> 
         <motion.section
