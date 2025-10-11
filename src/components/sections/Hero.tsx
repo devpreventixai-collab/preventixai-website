@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
 
             {/* Product showcase - right side */}
-            <div className="flex items-center justify-center lg:justify-end py-8 lg:py-12">
+            <div className="flex items-center justify-center lg:justify-end py-8 lg:py-12 px-8 sm:px-12">
               <div className="w-full max-w-sm lg:max-w-lg h-64 sm:h-80 lg:h-96 xl:h-[500px] relative">
                 {/* Main safety image */}
                 <div className="w-full h-full relative">
@@ -96,7 +96,7 @@ const Hero = () => {
                   </div>
                   
                   {/* Floating secondary image - adjusted for mobile */}
-                  <div className="absolute -top-4 lg:-top-8 -left-4 lg:-left-8 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden shadow-xl bg-white/95 backdrop-blur-sm border border-white/60">
+                  <div className="absolute top-0 left-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden shadow-xl bg-white/95 backdrop-blur-sm border border-white/60 -translate-x-1/3 -translate-y-1/3">
                     <img 
                       src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/photo-1460925895917-afdab827c52f.avif" 
                       alt="Workplace safety equipment and protective hard hat for accident prevention and RIDDOR compliance"
@@ -105,7 +105,7 @@ const Hero = () => {
                   </div>
                   
                   {/* Small floating badge - adjusted for mobile */}
-                  <div className="absolute -bottom-3 lg:-bottom-6 -right-3 lg:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-white/95 backdrop-blur-sm border border-white/60 flex items-center justify-center">
+                  <div className="absolute bottom-0 right-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-white/95 backdrop-blur-sm border border-white/60 flex items-center justify-center translate-x-1/3 translate-y-1/3">
                     <img 
                       src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/photo-1558963675-94dc9c4a66a9.avif" 
                       alt="AI-powered workplace safety analytics and risk prediction chart for incident prevention"

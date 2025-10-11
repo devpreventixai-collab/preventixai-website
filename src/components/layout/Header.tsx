@@ -178,10 +178,12 @@ const Header = () => {
                 <div className="w-64">
                   <h4 className="font-bold text-lg mb-4 text-gray-900">Learn More</h4>
                   <ul className="space-y-3">
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
-                      <Book className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <a href="/blog" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
-                        Blog
+                    <li>
+                      <a href="/blog" className="w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
+                        <Book className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                          Blog
+                        </span>
                       </a>
                     </li>
                     <li 
@@ -211,16 +213,20 @@ const Header = () => {
                 <div className="w-64">
                   <h4 className="font-bold text-lg mb-4 text-gray-900">Get Help</h4>
                   <ul className="space-y-3">
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
-                      <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <a href="/contact" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
-                        Contact Us
+                    <li>
+                      <a href="/contact" className="w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
+                        <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                          Contact Us
+                        </span>
                       </a>
                     </li>
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
-                      <Play className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <a href="/contact" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
-                        Request Demo
+                    <li>
+                      <a href="/contact" className="w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
+                        <Play className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                          Request Demo
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -297,10 +303,12 @@ const Header = () => {
                 <div className="w-64">
                   <h4 className="font-bold text-lg mb-4 text-gray-900">Frequently Asked Questions</h4>
                   <ul className="space-y-3">
-                    <li className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
-                      <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
-                      <a href="/faq" className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
-                        View FAQs
+                    <li>
+                      <a href="/faq" className="w-full flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 cursor-pointer group">
+                        <HelpCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-200">
+                          View FAQs
+                        </span>
                       </a>
                     </li>
                   </ul>

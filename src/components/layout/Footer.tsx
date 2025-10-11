@@ -8,8 +8,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-br rounded-lg flex items-center justify-center">
+                <img src="https://preventix-website-media.s3.eu-west-2.amazonaws.com/preventix-logo-new-removebg-preview+(1).png" className="w-5 h-5 text-white" />
               </div>
               <span className="text-xs text-muted-foreground font-medium">Preventix AI</span>
             </div>
