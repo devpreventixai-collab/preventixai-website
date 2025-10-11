@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, User, Phone, MessageSquare, CheckSquare } from 'lucide-react';
-import { useContact } from '../../context/ContactContext'; // Adjust path as needed
+import { useContact } from '../../context/ContactContext';
+import { useForm, ValidationError } from '@formspree/react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 
@@ -21,8 +22,8 @@ const Contact: React.FC = () => {
     message: '',
     consent: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  // Remove the useForm hook as we're handling submission manually
 
   const validateForm = () => {
     let isValid = true;
@@ -59,21 +60,31 @@ const Contact: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    if (validateForm()) {
+      // Create a plain JavaScript object with the form data
+      const formDataToSend = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        consent: formData.consent
+      };
+      
+      // Submit the form data directly
+      await fetch('https://formspree.io/f/meorrpzj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataToSend)
+      });
 
-    setIsSubmitting(true);
-    // Simulate API call
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Mock delay
+      // Manually trigger success state
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', phone: '', message: '', consent: false });
-      setTimeout(() => setSubmitSuccess(false), 3000); // Hide success message after 3s
-    } catch (error) {
-      console.error('Submission error:', error);
-    } finally {
-      setIsSubmitting(false);
+      setTimeout(() => setSubmitSuccess(false), 5000);
     }
   };
 
@@ -126,7 +137,7 @@ const Contact: React.FC = () => {
               )}
             </AnimatePresence>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name <span className="text-red-500">*</span>
@@ -218,21 +229,22 @@ const Contact: React.FC = () => {
                 {errors.consent && <p className="mt-1 text-xs text-red-500">{errors.consent}</p>}
               </div>
 
-              <motion.button
+              <button
                 type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.05, backgroundColor: '#2563eb' }}
-                whileTap={{ scale: 0.95 }}
-                className={`w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={submitSuccess}
+                className={`w-full flex justify-center py-4 px-6 border border-transparent rounded-xl text-base font-medium text-white ${
+                  submitSuccess
+                    ? 'bg-primary/70 cursor-not-allowed'
+                    : 'bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50'
+                }`}
               >
-                {isSubmitting ? 'Submitting...' : 'Send Message'}
-              </motion.button>
+                {submitSuccess ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           </motion.div>
 
           <motion.div
             className="text-center mt-12"
-            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
