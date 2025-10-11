@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Google Consent Mode v2 - MUST be before GTM -->
+    <script>
+      // Default consent state (denied until user accepts)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted', // Always granted for security
+        'wait_for_update': 500
+      });
+      
+      // Region-specific settings (UK - GDPR)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'region': ['GB', 'EU']
+      });
+    </script>
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,6 +36,136 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MZT77WLP');</script>
     <!-- End Google Tag Manager -->
+    
+    <!-- Cookie Consent Banner Styles -->
+    <style>
+      #cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 1.5rem;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        display: none;
+        animation: slideUp 0.4s ease-out;
+      }
+      
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      #cookie-consent-banner.show {
+        display: block;
+      }
+      
+      .cookie-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      
+      .cookie-text {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .cookie-text h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+      }
+      
+      .cookie-text p {
+        font-size: 0.875rem;
+        margin: 0;
+        opacity: 0.9;
+        line-height: 1.5;
+      }
+      
+      .cookie-text a {
+        color: #60a5fa;
+        text-decoration: underline;
+      }
+      
+      .cookie-buttons {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      
+      .cookie-btn {
+        padding: 0.625rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.875rem;
+      }
+      
+      .cookie-btn-accept {
+        background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+        color: white;
+      }
+      
+      .cookie-btn-accept:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+      }
+      
+      .cookie-btn-reject {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      .cookie-btn-reject:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      
+      .cookie-btn-customize {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      .cookie-btn-customize:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      
+      @media (max-width: 768px) {
+        .cookie-content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .cookie-buttons {
+          width: 100%;
+        }
+        
+        .cookie-btn {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+    </style>
     
     <!-- Primary SEO Tags -->
     <title>Preventix AI - RIDDOR Reporting, Workplace Safety & AI Risk Prevention Platform</title>
@@ -173,6 +328,101 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZT77WLP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3>🍪 We value your privacy</h3>
+          <p>
+            We use cookies to enhance your experience, analyze site traffic, and serve personalized content. 
+            By clicking "Accept All", you consent to our use of cookies. 
+            <a href="/privacy-policy" target="_blank">Privacy Policy</a> | 
+            <a href="/cookie-policy" target="_blank">Cookie Policy</a>
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Reject All</button>
+          <!-- <button class="cookie-btn cookie-btn-customize" onclick="customizeCookies()">Customize</button> -->
+          <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cookie Consent Script -->
+    <script>
+      // Check if user has already made a choice
+      function checkCookieConsent() {
+        const consent = localStorage.getItem('cookie_consent');
+        if (!consent) {
+          document.getElementById('cookie-consent-banner').classList.add('show');
+        }
+      }
+      
+      // Accept all cookies
+      function acceptCookies() {
+        // Update consent
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted',
+          'functionality_storage': 'granted',
+          'personalization_storage': 'granted'
+        });
+        
+        // Save preference
+        localStorage.setItem('cookie_consent', 'accepted');
+        localStorage.setItem('cookie_consent_date', new Date().toISOString());
+        
+        // Hide banner
+        document.getElementById('cookie-consent-banner').classList.remove('show');
+        
+        // Push event to dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'cookie_consent_accepted',
+          'consent_type': 'all'
+        });
+      }
+      
+      // Reject all cookies
+      function rejectCookies() {
+        // Keep consent denied
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'functionality_storage': 'denied',
+          'personalization_storage': 'denied'
+        });
+        
+        // Save preference
+        localStorage.setItem('cookie_consent', 'rejected');
+        localStorage.setItem('cookie_consent_date', new Date().toISOString());
+        
+        // Hide banner
+        document.getElementById('cookie-consent-banner').classList.remove('show');
+        
+        // Push event to dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'cookie_consent_rejected',
+          'consent_type': 'none'
+        });
+      }
+      
+      // Customize cookies (you can create a modal for this)
+      function customizeCookies() {
+        // For now, just open privacy policy
+        // You can create a custom modal with individual cookie toggles
+        window.open('/privacy-policy', '_blank');
+      }
+      
+      // Show banner on page load if no consent given
+      window.addEventListener('load', checkCookieConsent);
+    </script>
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
