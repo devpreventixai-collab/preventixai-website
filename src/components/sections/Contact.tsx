@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
       };
       
       // Submit the form data directly
-      await fetch('https://formspree.io/f/meorrpzj', {
+      await fetch('https://formspree.io/f/mgvnrprl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
