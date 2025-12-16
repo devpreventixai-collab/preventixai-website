@@ -122,3 +122,35 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .text-text-primary {
+    @apply text-foreground;
+  }
+  .text-text-secondary {
+    @apply text-muted-foreground;
+  }
+  .bg-surface {
+    @apply bg-card;
+  }
+  .bg-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-600;
+  }
+  .shadow-cta {
+    @apply shadow-lg shadow-primary/20;
+  }
+  .text-success {
+    @apply text-green-600;
+  }
+  .text-error {
+    @apply text-red-600;
+  }
+  .text-warning {
+    @apply text-yellow-500;
+  }
+  .hover-scale {
+    @apply transition-transform hover:scale-105;
+  }
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
