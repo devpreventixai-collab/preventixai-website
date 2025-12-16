@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
@@ -18,6 +18,7 @@ const SolutionJourneySection = () => {
   const [isHydrated, setIsHydrated] = useState(false);
   const [activeStep, setActiveStep] = useState(1);
   const [imageScale, setImageScale] = useState(1);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -32,6 +33,36 @@ const SolutionJourneySection = () => {
 
     return () => clearInterval(scaleInterval);
   }, [isHydrated, activeStep]);
+
+  useEffect(() => {
+    if (!isHydrated) return;
+
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const windowHeight = window.innerHeight;
+      const triggerPoint = windowHeight * 0.8;
+
+      let newStep = 1;
+
+      if (sectionTop < triggerPoint - 600) {
+        newStep = 4;
+      } else if (sectionTop < triggerPoint - 400) {
+        newStep = 3;
+      } else if (sectionTop < triggerPoint - 200) {
+        newStep = 2;
+      }
+
+      setActiveStep(newStep);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHydrated]);
 
   const steps: JourneyStep[] = [
   {
@@ -86,7 +117,7 @@ const SolutionJourneySection = () => {
 
   if (!isHydrated) {
     return (
-      <section className="py-20 bg-white">
+    <section id="solution-journey" className="py-20 bg-white" ref={sectionRef}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <div className="h-10 bg-gray-200 rounded-lg animate-pulse w-96 mx-auto mb-4" />
@@ -99,7 +130,7 @@ const SolutionJourneySection = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section id="solution-journey" className="py-20 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
