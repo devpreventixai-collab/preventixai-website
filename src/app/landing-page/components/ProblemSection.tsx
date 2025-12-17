@@ -130,7 +130,7 @@ const ProblemSection = () => {
               </div>
               <div className="relative rounded-xl overflow-hidden mb-6">
                 <AppImage
-                  src="https://img.rocket.new/generatedImages/rocket_gen_img_1e9f7a797-1765107320838.png"
+                  src="https://firebasestorage.googleapis.com/v0/b/unlimitedastro-62d27.firebasestorage.app/o/images%2FPreventixai%20LOGO%201%20(1).png?alt=media&token=9b8f2a49-4a28-47ba-83d8-c043824b3cff"
                   alt="Confident care manager smiling while reviewing organized digital incident reports on tablet in modern bright care home office"
                   className="w-full h-64 object-cover" />
 

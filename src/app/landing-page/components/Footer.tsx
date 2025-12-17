@@ -158,10 +158,6 @@ const Footer = () => {
               <span className="text-sm text-gray-400">GDPR Compliant</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icon name="CheckBadgeIcon" size={24} variant="solid" className="text-success" />
-              <span className="text-sm text-gray-400">ISO 27001 Certified</span>
-            </div>
-            <div className="flex items-center gap-2">
               <Icon name="GlobeAltIcon" size={24} variant="solid" className="text-success" />
               <span className="text-sm text-gray-400">UK Data Hosting</span>
             </div>

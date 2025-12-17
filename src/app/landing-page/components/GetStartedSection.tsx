@@ -383,7 +383,7 @@ const GetStartedSection = () => {
             </div>
             <div className="flex items-center gap-2 text-text-secondary">
               <Icon name="CheckBadgeIcon" size={20} variant="solid" className="text-success" />
-              <span className="text-sm">CQC approved</span>
+              <span className="text-sm">CQC Compliant</span>
             </div>
           </div>
         </div>
