@@ -49,7 +49,7 @@
 
   <!-- Product Demo Login -->
   <url>
-    <loc>https://preventixai-dev.web.app/login</loc>
+    <loc>https://preventixai.web.app/login</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -96,7 +96,7 @@ const Hero = () => {
 
                 {/* Explore product link */}
                 <div className="mb-8 lg:mb-16">
-                  <a href="https://preventixai-dev.web.app/login" className="text-slate-600 hover:text-slate-800 flex items-center space-x-2 group transition-colors duration-200">
+                  <a href="https://preventixai.web.app/login" className="text-slate-600 hover:text-slate-800 flex items-center space-x-2 group transition-colors duration-200">
                     <span className="underline decoration-2 underline-offset-4 decoration-orange-400">Explore product</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

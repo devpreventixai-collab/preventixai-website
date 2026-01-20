@@ -320,7 +320,7 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
             <a
-              href="https://preventixai-dev.web.app/incident-records"
+              href="https://preventixai.web.app/incident-records"
               target="_blank"
               rel="noreferrer"
               className="hidden sm:block"
@@ -401,7 +401,7 @@ const Header = () => {
             </a>
             <div className="pt-4 border-t border-gray-200">
               <a
-                href="https://preventixai-dev.web.app/incident-records"
+                href="https://preventixai.web.app/incident-records"
                 target="_blank"
                 rel="noreferrer"
                 className="block w-full"
